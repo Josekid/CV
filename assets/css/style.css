@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: aliceblue;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4,auto);
+}
+
+.container > div,
+.container .cabezera,
+.container .contenido,
+.container .sidebar,
+.container .pie__pagina{
+    background: blanchedalmond;
+    padding: 20px;
+    border-radius: 4px;
+
+}
+
+.container .cabezera{
+    background: #8CD2E8;
+    color: black;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+.container .contenido{
+    grid-column: span 2;
+}
+.container .sidebar{
+    grid-column: 3 / 4;
+    background-color: #CEDBDF;
+    text-align: center;
+    grid-row: 2/4;;
+    min-width: 100px;
+}
+
+.container .widget1,
+.container .widget2{
+    background-color: #32C9F9;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .pie__pagina{
+    background-color: #8CD2E8;
+    color: black;
+    grid-column-start: span 3;
+    text-align: center;
+}
+
+.img__layout{
+    width: 100px;
+    height: 100px;
+}
+
+@media screen and (max-width: 768px){
+    .container .contenido{
+        grid-column: 1/-1;
+    }
+    .container .sidebar{
+        grid-column: 1/-1;
+
+    }
+    
+}
